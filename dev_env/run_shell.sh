@@ -7,9 +7,5 @@ then
 fi
 
 docker run -it --rm --name tf-ans-aws-container \
-<<<<<<< HEAD
-    --volume /Users/matt/SourceCode/GitLab_Projs/deploy-jenkins/infrastructure:/infrastructure \
-=======
-    --volume ~/SourceCode/asTech_Projs/DevOps/deploy_new_jenkins/infrastructure:/infrastructure \
->>>>>>> add-monitoring
+    --volume ~/SourceCode/DevOps/deploy-jenkins/infrastructure:/infrastructure \
     mattman70/tf1-2-8-ansible-shell:$1

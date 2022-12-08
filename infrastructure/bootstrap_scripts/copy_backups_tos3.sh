@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # this script uploads the latest jenkins_home backup and /etc/sudoers to s3
-# script must get a bucket name as first argument and environment name as second argument
+# script must get a bucket name as an argument
 
 LOGFILE=/tmp/jenkins_backup_scripts/copy_backup_log.txt
 ## delete the existing log to keep things tidy
@@ -20,7 +20,7 @@ echo "Newest file in ${jenkins_backups_dir}: ${target_file}" >> $LOGFILE
 
 # copy backup to s3
 echo "Copying ${target_file} to ${1}/${2}/backups ..." >> $LOGFILE
-aws s3 cp $jenkins_backups_dir/$target_file s3://$1/$2/backups/$target_file
+aws s3 cp $jenkins_backups_dir/$target_file s3://$1/backups/$target_file
 echo "Jenkins backup file upload complete: $(date)" >> $LOGFILE
 
 echo "Copying sudoers to ${1}/${2}/backups ..." >> $LOGFILE
