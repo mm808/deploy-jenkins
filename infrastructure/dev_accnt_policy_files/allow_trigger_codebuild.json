@@ -1,0 +1,47 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowTriggerCodeBuild",
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:StartBuild",
+                "codebuild:RetryBuildBatch",
+                "codebuild:StartBuildBatch",
+                "codebuild:DescribeTestCases",
+                "codebuild:GetResourcePolicy",
+                "codebuild:StopBuild",
+                "codebuild:DescribeCodeCoverages",
+                "codebuild:List*",
+                "codebuild:RetryBuild",
+                "codebuild:BatchGet*",
+                "codebuild:StopBuildBatch",
+                "cloudwatch:GetMetricStatistics",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "logs:GetLogEvents",
+                "events:ListRuleNamesByTarget",
+                "events:DescribeRule",
+                "events:ListTargetsByRule"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowCBSourceBucket",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::mm-808-dev-codebuild-source",
+                "arn:aws:s3:::mm-808-dev-codebuild-source/*"
+            ]
+        },
+        {
+            "Sid": "AllowSSMParams",
+            "Effect": "Allow",
+            "Action": "ssm:PutParameter",
+            "Resource": "arn:aws:ssm:*:*:parameter/CodeBuild/*"
+        }
+    ]
+}

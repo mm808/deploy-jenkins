@@ -1,0 +1,15 @@
+env                        = "dev"
+app_region                 = "us-east-1"
+owner                      = "Connect Team"
+instance_type              = "t2.micro"
+infra_alarm_sns_arn        = "arn:aws:sns:us-east-1:123456789:connect-infra-alarms-dev"
+app_name                   = "jenkins-server-dev"
+vpc_id                     = "vpc-123456789"
+lb_subnet_ids              = ["subnet-123456789", "subnet-123456789"]
+lb_subnet_cidrs            = ["10.192.8.0/24", "10.192.9.0/24"]
+cert_arn                   = "arn:aws:acm:us-east-1:123456789:certificate/123456789"
+server_subnet              = "subnet-123456789"
+s3_bootstrap_bucket        = "astech-jenkins-server-files"
+s3_bootstrap_folder        = "bootstrap"
+cross_accnt_codebuild_role = "nottherealvalue"
+disk_monitoring_device     = "xvda1"
